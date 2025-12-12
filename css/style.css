@@ -1,0 +1,1130 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+    -webkit-user-select: none; 
+    -moz-user-select: none;   
+    -ms-user-select: none;     
+    user-select: none; 
+}
+@font-face {
+  font-family: 'ClassicSBA'; /* любое имя */
+  src: url('../fonts/SFProText-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+
+.corpus{
+  width: 300px;
+  height: 600px;
+  background: rgb(216, 98, 30);
+  border-radius: 40px;
+  position: fixed;
+  border: solid, 0.5px, rgb(88, 47, 0);
+}
+
+.ButtonOnOff{
+  width: 4px;
+  height: 68px;
+  background: rgb(173, 79, 25);
+  border-radius: 12px;
+  position: absolute;
+  left: 299px;
+  top: 180px;
+  cursor: pointer;
+}
+
+.screen{
+  width: 282px;
+  height: 585px;
+  border-radius: 35px;
+  background: rgb(0, 0, 0);
+  position: absolute;
+  left: 1.75%;
+  top: 0.7%;
+  border: solid, 4px, black;
+}
+
+.island{
+  width: 80px;
+  height: 25px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 14px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+    position: absolute;
+    left: 35%;
+    top: 1.07%;
+
+  white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;
+}
+.island:active {
+  transform: scale(1.1);
+}
+
+.island_mi{
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  position: relative;
+  top: 4.3px;
+  left: 6px;
+
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.audio-waves {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  height: 0.04px;
+}
+
+.wave-bar {
+  width: 2px;
+  background: rgb(91, 0, 133);
+  border-radius: 2px;
+  transition: height 0.2s ease;
+
+  position: relative;
+  top: -8px;
+  left: 98px;
+}
+
+.wave-bar:nth-child(1) { height: 1px; }
+.wave-bar:nth-child(2) { height: 3px; }
+.wave-bar:nth-child(3) { height: 5px; }
+.wave-bar:nth-child(4) { height: 3px; }
+.wave-bar:nth-child(5) { height: 1px; }
+
+.background{
+  width: 282px;
+  height: 585px;
+  background-image: url("../phone/one3.png");
+  background-size: cover;    
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 0.4s ease-in-out;
+}
+
+.background.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+
+
+
+/* Это батарея там и зарядка */
+
+.up-element{
+  position: absolute;
+  left: 210px;
+  top: 7.8px;
+  display: flex;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.battery-show{
+  font-size: 20px;
+  color: rgba(216, 216, 216, 0.568);
+  transition: all 0.3s;
+}
+
+.wifi-show{
+  margin-right: 10px;
+  margin-top: 3px;
+  font-size: 13px;
+  color: rgba(240, 255, 255, 0.815);
+
+  transition: all 0.3s;
+}
+
+/*Начальные экранные утилиты*/
+
+.esim{
+  color: rgba(255, 255, 255, 0.555);
+  font-weight:bolder;
+
+  position: absolute;
+  left: 20px;
+  top: 11px;
+}
+
+.poloca{
+  width: 45px;
+  height: 2px;
+  background: #ffffff8a;
+
+  position: absolute;
+  top: 33px;
+  left: 200px;
+}
+
+.time{
+  font-family: 'ClassicSBA' , Arial, Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  
+  position: absolute;
+  left: 10%;
+  top: 80px;
+  font-size: 80px;
+  font-weight: 100;
+  transform: scaleY(4);
+}
+
+.buttonTg{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease-in-out;
+
+  color: azure;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 520px;
+  left: 30px;
+}
+.buttonTg:active{
+  transform: scale(1.2);
+}
+
+.buttonCm{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease-in-out;
+
+  color: azure;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 520px;
+  left: 215px;
+}
+.buttonCm:active{
+  transform: scale(1.2);
+}
+
+
+
+.start-menu, .one-menu {
+  transition: all 0.5s ease-in-out;
+}
+
+.start-menu.hidden {
+  opacity: 0;
+  transform: translateY(-500px);
+  visibility: hidden;
+}
+
+.start-menu.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.one-menu.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  visibility: hidden;
+}
+
+.one-menu.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.swipe-button {
+  width: 100px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.897);
+  border-radius: 12px;
+  position: absolute;
+  top: 576px;
+  left: 91px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.swipe-button:active {
+  transform: scale(0.9);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Утилиты главного экрана у сифона */
+.times{
+  font-size: 15px;
+  color: rgba(240, 255, 255, 0.774);
+  position: absolute;
+  left: 30px;
+  cursor: pointer;
+}
+
+.down-element{
+  width: 260px;
+  height: 55px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  backdrop-filter: blur(3px) saturate(180%);
+  -webkit-backdrop-filter: blur(3px) saturate(180%);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+
+  transition: all 0.3s ease-in-out;
+  border-radius: 24px;
+
+  position: absolute;
+  left: 10px;
+  top: 520px;
+
+}
+
+.vidjet-one{
+  width: 110px;
+  height: 110px;
+  transition: all 0.2s;
+
+    background-image: url('../local_image/image1.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  background-color: #ffffff46;
+
+  border-left: solid 1px #ffffff3b;
+  border-right: solid 1px #ffffff3b;
+
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  z-index: 3
+}
+
+.v1-name{
+  color: #ffffff;
+  font-size: 11px;
+  position: relative;
+  left: 40px;
+  top: 113px;
+}
+
+.vidjet-one:active{
+  transform: scale(1.03);
+  box-shadow: inset 0 0 20px rgba(24, 24, 24, 0.336);
+}
+
+/* Иконки приложений */
+.icon-app{
+  z-index: 3;
+  position: absolute;
+}
+
+.setting-app{
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+
+  background-image: url("../icons/settings-app.png");
+  background-size: cover;
+  background-position: center;
+
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  position: relative;
+  left: 145px;
+  top: 49px;
+}
+
+.setting-app-txt{
+  font-size: 10px;
+  color: #ffffff;
+
+  position: relative;
+  
+  top: 50px;
+}
+
+.setting-app:active{
+  transform: scale(1.05);
+box-shadow: inset 0 0 20px rgba(24, 24, 24, 0.705);
+}
+
+/* Панель нижняя */
+.down-app{
+  display: flex;
+  position: absolute;
+  top: 2.5px;
+  left: 10px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 18px;
+}
+
+.phone-app{
+  width: 50px;
+  height: 50px;
+
+  background-image: url("../icons/phone-app.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.browser-app{
+  width: 50px;
+  height: 50px;
+  margin-left: 13px;
+
+  background-image: url("../icons/browser-app.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.messanger-app{
+  width: 50px;
+  height: 50px;
+  margin-left: 13px;
+
+  background-image: url("../icons/messanger-app.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.music-app{
+  width: 50px;
+  height: 50px;
+  margin-left: 13px;
+
+  background-image: url("../icons/music-app.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/*Другое */
+
+.El-search{
+width: 55px;
+height: 20px;
+border-radius: 12px;
+background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(3px);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+border: 1px solid rgba(255, 255, 255, 0.18);
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+
+color: #ffffff;
+font-size: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+position: absolute;
+top: 460px;
+left: 112px;
+
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+font-smooth: always;
+}
+
+.El-search:active{
+  transform: scale(1.1);
+}
+
+.fast-menu{
+  width: 100%;
+  height: 100%; 
+  background: #ffffff27;
+  backdrop-filter: blur(8px);
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+}
+
+.fm-sw{
+  transform: translateY(-230px);
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+.bOffPhone{
+  color: #ffffffde;
+  font-size: 12px;
+
+  position: absolute;
+  left: 240px;
+  top: 14px;
+  cursor: pointer;
+
+ transition: all 0.3s ease-in-out;
+
+ width: 20px;
+ height: 20px;
+ border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.bOffPhone:active{
+  transform: scale(1.25);
+  background: rgba(0, 0, 0, 0.377);
+}
+
+.one-polosa{
+  position: absolute;
+  top: 45px;
+  display:flex;
+}
+
+.battery-show1{
+  position: absolute;
+  left: 226px;
+  top: 0.30px;
+
+ font-size: 20px;
+ color: rgba(240, 248, 255, 0.774);
+
+}
+
+.prosent-battery{
+ font-size: 13px;
+ color: rgb(250, 252, 253);
+
+ padding-right: 50px;
+
+ position: relative;
+ left: 170px;
+ top: -7.5px;
+
+ margin-right: 10px;
+
+}
+
+.signal1{
+ font-size: 13px;
+ color: rgb(255, 255, 255);
+
+ position: relative;
+ left: 30px;
+ top: 2px;
+}
+
+.signal-info{
+ font-size: 13px;
+ color: rgb(250, 252, 253); 
+ 
+ position: relative;
+ left: -61px;
+ top: -7.5px;
+}
+
+.fst-vpn{
+ font-size: 10px;
+ color: rgb(250, 252, 253); 
+ text-align: center; 
+
+ width: 24px;
+ height: 11px;
+ border: 1px, solid, rgb(255, 253, 253);
+ border-radius: 4px;
+
+ position: relative;
+ left: -57px;
+ top: -6.5px;
+}
+
+.fast-window{
+  display: flex;
+  position: absolute;
+  top: 85px;
+}
+
+.f-window1{
+  width: 105px;
+  height: 105px;
+  background: #ffffff1a;
+  backdrop-filter: blur(5px);
+  border-radius: 24px;
+  border: 2.05px, solid, rgba(255, 255, 255, 0.116);
+
+  position: relative;
+  left: 25px;
+}
+
+.f-window2{
+  width: 105px;
+  height: 105px;
+  background: #ffffff1a;
+  backdrop-filter: blur(5px);
+  border-radius: 24px;
+  border: 2.05px, solid, rgba(255, 255, 255, 0.116);
+
+  position: relative;
+  left: 38px;
+  display: inline;
+ transition: all 0.3s ease-in-out;
+
+  white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.b-wifi{
+  color: rgba(240, 248, 255, 0.911);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+
+  background: rgba(8, 144, 255, 0.788);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  position: relative;
+  left: 8px;
+  top: -23px;
+
+  cursor: pointer;
+}
+.b-bluetz{
+  color: rgba(240, 248, 255, 0.911);
+  font-size: 23px;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 23px;
+
+  background: rgba(226, 226, 226, 0.233);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  position: relative;
+  left: 57px;
+  top: -32px; 
+
+  cursor: pointer;
+}
+.b-poleta{
+  color: rgba(240, 248, 255, 0.911);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+
+  background: rgba(226, 226, 226, 0.233);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  position: relative;
+  left: 8px;
+  top: 8px;
+
+  cursor: pointer;
+}
+
+.back-menu{
+  cursor: pointer;
+  width: 500px;
+  height: 400px;
+
+  position: absolute;
+  top: 300px;
+
+}
+
+.fm-iconsm{
+  width: 38px;
+  height: 38px;
+
+  background-image: url('../local_music/daydream_i.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+
+  position: relative;
+  left: 7px;
+  top: 8px;
+}
+
+.speaker-fm{
+  color: rgb(238, 238, 238);
+  font-size: 14px;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #dddddd3b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  position: relative;
+  left: 67px;
+  top: -30px;
+}
+
+.fm_namemc{
+  color: rgba(255, 255, 255, 0.623);
+  font-size: 14px;
+  font-weight: bold;
+
+  position: relative;
+  top: -19px;
+  left: 10px;
+}
+
+.fmsong_desp{
+  color: rgba(255, 255, 255, 0.623);
+  font-size: 12px;
+  font-weight: 100;
+
+  position: relative;
+  top: -19px;
+  left: 10px;
+}
+
+.fm-btplay{
+  position: relative;
+  left: 46px;
+  top: -15px;
+
+  color: #ffffffc2;
+  font-size: 17px;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.fm-btback{
+  position: relative;
+  left: 13px;
+  top: -35px;
+
+  color: #ffffffc2;
+  font-size: 15px;  
+}
+
+.fm-btnext{
+  position: relative;
+  left: 75px;
+  top: -51.86px;
+
+  color: #ffffffc2;
+  font-size: 15px;    
+}
+
+
+
+/* Приложения */
+
+.openapp{
+ opacity: 0;
+ pointer-events: none;
+}
+
+.op-fm-app{
+ width: 90px;
+ height: 20px;
+
+ cursor: pointer;
+
+ position: fixed;
+ left: 180px;
+ top: 1px;
+ z-index: 6;
+}
+
+.op-bm-app{
+ width: 90px;
+ height: 20px;
+
+ cursor: pointer;
+
+ position: fixed;
+ left: 8px;
+ top: 1px;
+ z-index: 6;
+}
+
+
+.setting{
+  width: 300px;
+  height: 900px;
+  border-radius: 20px;
+
+  position: fixed;
+  background: #080808;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.4s;
+  z-index: 5;
+}
+
+.setting-names{
+  color: aliceblue;
+  font-size: 18px;
+
+  position: relative;
+  top: 35px;
+  left: 10px;
+}
+
+.setting-profile{
+  width: 260px;
+  height: 85px;
+
+  background: #2b2b2bc7;
+  border-radius: 20px;
+
+  position: relative;
+  left: 10px;
+  top: 10px;
+}
+.setting-avatar{
+  width: 33px;
+  height: 33px;
+
+  border-radius: 25px;
+  background: linear-gradient(90deg, rgb(167, 191, 255), rgb(140, 170, 255));
+
+  position: relative;
+  top: 8px;
+  left: 13px;
+
+  color: #fffffff1;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setting-t1{
+  color: #ffffffef;
+  font-weight: bold;
+  font-size: 15px;
+
+  position: relative;
+  top: -21px;
+  left: 53px;
+}
+
+.setting-t2{
+  color: #ffffff9c;
+  font-size: 9px;
+
+  position: relative;
+  top: -20px;
+  left: 53px;
+}
+
+.setting-p1{
+  color: #ffffff9c;
+  font-weight: bold;
+  font-size: 13px;
+
+  position: relative;
+  top: -42px;
+  left: 238px;
+}
+
+.setting-p2{
+  width: 75%;
+  height: 1px;
+
+  background: #ffffff1f;
+
+  position: relative;
+  top: -21px;
+  left: 50px;
+}
+
+.setting-t3{
+  color: #ffffffef;
+  font-size: 13px;
+
+  position: relative;
+  top: -13px;
+  left: 13px;
+}
+.setting-y1{
+  width: 17px;
+  height: 17px;
+
+  border-radius: 33px;
+  background: #ff3f3f;
+  
+  color: #ffffff;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  top: -30px;
+  left: 215px;
+}
+
+.setting-app-yv{
+  width: 18px;
+  height: 18px;
+
+  border-radius: 33px;
+  background: #ff3f3f; 
+  
+  color: #ffffff;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  left: 40px;
+  top: -17px;
+}
+
+.setting-p3{
+  color: #ffffff9c;
+  font-weight: bold;
+  font-size: 13px;
+
+  position: relative;
+  left: 238px;
+  top: -45px;
+}
+
+.setting-parametr{
+  width: 260px;
+  height: 300px;
+
+  background: #2b2b2bc7;
+  border-radius: 20px;
+
+  position: relative;
+  left: 10px;
+  top: 30px;
+}
+
+.search-container-setting{
+  position: relative;
+  top: 50px;
+  left: 20px;
+  display: inline-block;
+
+  color: #ffffff5b;
+}
+
+.setting-search{
+  height: 25px;
+  width: 92%;
+
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(2px);
+  border: solid 0.02px rgba(221, 221, 221, 0.26);
+  padding-left: 30px;
+  color: #ffffff5b;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.setting-search:enabled {
+  outline: none;
+  color: #ffffffde;
+}
+
+.search-icon {
+  position: relative;
+  left: 10px;
+  top: 23px;
+  z-index: 2;
+  font-size: 14px;
+}
+
+.setting-poleta{
+  z-index: 2;
+  color: #ffffff;
+  font-size: 13px;
+
+  position: relative;
+  top: 10px;
+  display: flex;
+}
+
+.setting-plane-icon{
+  width: 23px;
+  height: 23px;
+  background: #b3b3b333;
+  border-radius: 7px;
+  backdrop-filter: blur(2px);
+
+  border-left: 0.2px solid #ffffff67;
+  border-top: 0.2px solid #ffffff67;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  left: 14px;
+}
+
+.setting-plane-t1{
+  padding-left: 23px;
+  padding-top: 4px;
+}
+
+
+.switch{
+    width: 45px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.295);
+    border-radius: 12px;
+    
+    position: relative;
+    left: 80px;
+    top: 2px;
+
+    transition: all 0.3s;
+}
+
+.switch-slider{
+  width: 55%;
+  height: 80%;
+  background: #ffffff;
+  border-radius: 7px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: 2px;
+  left: 3px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.setting-p4{
+  width: 75%;
+  height: 1px;
+  background: #ffffff36;
+
+  position: relative;
+  left: 48px;
+  top: 15px;
+}
+
+.setting-wifi{
+  z-index: 2;
+  color: #ffffff;
+  font-size: 13px;
+
+  position: relative;
+  top: 25px;
+  display: flex;
+}
+
+.setting-wifi-icon{
+  width: 23px;
+  height: 23px;
+  background: #b3b3b333;
+  border-radius: 7px;
+  backdrop-filter: blur(2px);
+
+  border-left: 0.2px solid #ffffff67;
+  border-top: 0.2px solid #ffffff67;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  left: 14px;
+}
+
+.setting-wifi-t1{
+  padding-left: 23px;
+  padding-top: 4px;
+}
+

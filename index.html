@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Iphone 17 pro max - macket</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+ <div class="corpus">
+   <div class="ButtonOnOff" onclick="OnOffButton()"></div>
+   <div class="screen">
+      <div class="island">
+        <img src="./local_music/basic_icons.jpg" class="island_mi">
+        <div class="audio-waves">
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+        </div>        
+      </div>
+      <div class="background" id="interface">
+
+           <div class="up-element" onclick="OnOffFastMenu()">
+             <div class="wifi-show"><i class="fa-solid fa-wifi"></i></div>
+             <div class="battery-show"><i class="fa-solid fa-battery-full"></i></div>
+           </div>
+
+           <div class="start-menu" id="start-menu">
+             <div class="poloca"></div>
+             <h1 class="time" id="time">14:05</h1>
+             <div class="esim">eSBA</div>
+             <div class="buttonTg" onclick="window.open('https://t.me/sbaeco', '_blank')"><i class="fa-solid fa-code"></i></div>
+             <div class="buttonCm"><i class="fa-solid fa-camera"></i></div>
+             <div class="swipe-button" onclick="OpenMenu()" id="swipe-b"></div>
+           </div>
+
+           <div class="one-menu" id="basic-menu">
+               <h1 class="times" id="time2" onclick="ClockMenu()">14:05</h1>
+               <h6 class="El-search"><i style="margin-right: 3px;" class="fa-solid fa-magnifying-glass"></i>  Search</h6>
+               <div class="down-element">
+                 <div class="down-app">
+                    <div class="phone-app"></div>
+                    <div class="browser-app"></div>
+                    <div class="messanger-app"></div>
+                    <div class="music-app"></div>
+                 </div>
+               </div>
+               <div class="openapp">
+                   <div class="app">
+                     <div class="setting">
+                        <div class="setting-one">
+                           <h5 class="setting-names">Настройки</h5>
+                           <div class="setting-profile">
+                              <div class="setting-avatar">SV</div>
+                              <div class="setting-t1">Save Lance</div>
+                              <div class="setting-t2">Аккаунт App, SBA и другое</div>
+                              <div class="setting-p1">></div>
+                              <div class="setting-p2"></div>
+                              <div class="setting-t3">Предложения Аккаунта SBA</div>
+                              <div class="setting-y1">3</div>
+                              <div class="setting-p3">></div>
+                           </div> 
+                           <div class="setting-parametr">
+                               <div class="setting-poleta">
+                                  <div class="setting-plane-icon"><i class="fa-solid fa-plane"></i></div>
+                                  <div class="setting-plane-t1">Авиарежим</div>
+                                  <div class="switch" id="switch_1"  onclick="GetSwitch(cases=1)">
+                                      <div class="switch-slider" id="switch-slider_1"></div>
+                                  </div>
+                               </div>
+                               <div class="setting-p4"></div>
+                               <div class="setting-wifi">
+                                  <div class="setting-wifi-icon"><i class="fa-solid fa-wifi"></i></div>
+                                  <div class="setting-wifi-t1">Wi-Fi</div>
+                                  <div class="switch" id="switch_2"  onclick="GetSwitch(cases=2)" style="margin-left: 40px;">
+                                      <div class="switch-slider" id="switch-slider_2"></div>
+                                  </div>
+                               </div>
+                           </div>   
+                           <div class="search-container-setting">
+                               <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                               <input type="text" class="setting-search" placeholder="Поиск">
+                           </div>          
+                        </div>
+                        <div class="swipe-button" onclick="OffApp()"></div>
+                     </div>
+                     <div class="op-fm-app" onclick="OnOffFastMenu()"></div>
+                     <div class="op-bm-app" onclick="ClockMenu()"></div>
+                   </div>
+               </div>
+               <div class="vidjet-one">
+                <div class="v1-name">Фото</div>
+               </div>
+               <div class="icon-app">
+                  <div class="setting-app" onclick="StartApp(App=1)">
+                     <div class="setting-app-txt">Настройки</div>
+                     <div class="setting-app-yv">3</div>
+                  </div>
+               </div>
+           </div>
+           
+           <div class="fast-menu" id="fast-menu">
+            <div class="fm-sw">
+             <div class="bOffPhone"><i class="fa-solid fa-power-off"></i></div>
+             <div class="one-polosa">
+               <div class="signal1"><i class="fa-solid fa-signal"></i></div>
+               <div class="battery-show1"><i class="fa-solid fa-battery-full"></i></div>      
+                <h2 class="prosent-battery">100 %</h2>  
+               <h2 class="signal-info">eSBA <i class="fa-solid fa-wifi"></i></h2> 
+               <h3 class="fst-vpn">VPN</h3>
+             </div>
+             <div class="fast-window">
+               <div class="f-window1">
+                  <div class="b-poleta" onclick="toggleAirplane()"><i class="fa-solid fa-plane"></i></div>
+                  <div class="b-bluetz"><i class="fa-brands fa-bluetooth-b"></i></div>
+                  <div class="b-wifi"><i class="fa-solid fa-wifi"></i></div>
+               </div>
+               <div class="f-window2">
+                 <div class="fm-iconsm"></div>
+                 <div class="speaker-fm"><i class="fa-solid fa-volume-high"></i></div>
+                 <div class="fm_namemc">DayDream</div>
+                 <div class="fmsong_desp">Gunter Kallmann Choir</div>
+
+                 <div class="fm-btplay"><i class="fa-solid fa-play"></i></div>
+                 <div class="fm-btback" onclick="PlayOffMusic()"><i class="fa-solid fa-backward"></i></div>
+                 <div class="fm-btnext"><i class="fa-solid fa-forward"></i></div>
+               </div>
+               <div class="back-menu" onclick="OnOffFastMenu()"></div>
+             </div>
+            </div>
+           </div>  
+      </div>
+   </div> 
+ </div> 
+
+ <script src="js/logic.js"></script>
+ 
+</body>
+</html>
